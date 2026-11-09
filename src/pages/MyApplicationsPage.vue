@@ -41,7 +41,9 @@ const submittedApplications = computed(
 )
 
 const totalPotential = computed(() =>
-  applications.value.reduce((total, application) => total + Number(application.amount || 0), 0),
+  applications.value
+    .filter((application) => application.status !== 'Rejected')
+    .reduce((total, application) => total + Number(application.amount || 0), 0),
 )
 
 function currency(value) {
@@ -192,4 +194,3 @@ function currency(value) {
     </div>
   </main>
 </template>
-" @change="updateStatus(application, $event)" @click="removeApplication(application.id)
