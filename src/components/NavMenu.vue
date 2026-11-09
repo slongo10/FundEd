@@ -1,16 +1,27 @@
 <template>
-  <nav class="flex justify-center gap-4">
+  <nav class="flex justify-center gap-6 bg-green-800 p-4 text-white">
     <RouterLink
       to="/"
-      class="hover:underline hover:underline-offset-4 [&.router-link-active]:underline [&.router-link-active]:underline-offset-4"
+      class="hover:underline"
+      active-class="underline"
     >
       Home
     </RouterLink>
+
     <RouterLink
-      to="/other"
-      class="hover:underline hover:underline-offset-4 [&.router-link-active]:underline [&.router-link-active]:underline-offset-4"
+      to="/scholarships"
+      class="hover:underline"
+      active-class="underline"
     >
-      Other
+      Scholarships
+    </RouterLink>
+
+    <RouterLink
+      to="/applications"
+      class="hover:underline"
+      active-class="underline"
+    >
+      My Applications
     </RouterLink>
   </nav>
 </template>
